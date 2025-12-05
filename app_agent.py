@@ -114,7 +114,7 @@ def calcolatrice_tasse(espressione: str):
         return "Errore nel calcolo."
 
 # --- 3. COSTRUZIONE DELL'AGENTE ---
-def get_agent_executor(api_key, project_id, vector_db):
+def get_agent_executor(vector_db):
 
     # Configurazione del modello Llama 3.1 servito da Ollama
     llm = ChatOllama(
@@ -159,7 +159,7 @@ vector_db, msg = inizializza_conoscenza()
 
 # Sidebar laterale per le chiavi
 with st.sidebar:
-    st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/IBM_logo.svg/1200px-IBM_logo.svg.png", width=200)
+    # LOGO UNISA st.image("https://seeklogo.com/images/U/universita-degli-studi-di-salerno-unisa-logo-145842C77D-seeklogo.com.png", width=200)
     st.title("⚙️ Pannello Agente")
     
     # Mostriamo lo stato del caricamento

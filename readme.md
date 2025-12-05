@@ -1,119 +1,213 @@
-# 🎓 UniLaw AI - Assistente Zero-Coda
+# 🎓 UniLaw AI – Assistente Zero-Coda
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
-![IBM watsonx](https://img.shields.io/badge/AI-IBM%20watsonx-052FAD.svg)
+![Llama 3.1](https://img.shields.io/badge/AI-Llama%203.1%208B-ff69b4.svg)
 ![LangChain](https://img.shields.io/badge/Framework-LangChain-green.svg)
+![ChromaDB](https://img.shields.io/badge/VectorDB-ChromaDB-purple.svg)
 ![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red.svg)
+![Redis](https://img.shields.io/badge/Cache-Redis-darkred.svg)
 
-> **L'Intelligenza Artificiale che legge i bandi al posto tuo.** > Un sistema RAG (Retrieval-Augmented Generation) basato su IBM watsonx.ai per interrogare documenti universitari in linguaggio naturale.
+> **L’AI che legge i bandi, interpreta i regolamenti e risponde agli studenti come un tutor esperto.**
+> UniLaw AI combina RAG locale, Agente ReAct, LLM open‑source, database vettoriale e un'interfaccia moderna per fornire risposte affidabili basate esclusivamente sui documenti ufficiali dell’Ateneo.
 
 ---
 
 ## 📋 Indice
-1. [Il Problema](#-il-problema)
+1. [Il Problema](#-il-problema) 
 2. [La Soluzione](#-la-soluzione)
-3. [Architettura Tecnica](#-architettura-tecnica)
-4. [Installazione](#-installazione)
-5. [Configurazione](#-configurazione)
-6. [Utilizzo](#-utilizzo)
-7. [Roadmap Futura](#-roadmap-futura)
+3. [Architettura Tecnica](#️-architettura-tecnica)
+4. [Componenti del Sistema](#-componenti-del-sistema)
+5. [Installazione](#-installazione)
+6. [Configurazione](#-configurazione)
+7. [Utilizzo](#️-utilizzo)
+8. [Roadmap Futura](#-roadmap-futura) 
 
 ---
 
 ## 🚨 Il Problema
-Ogni anno, le segreterie universitarie vengono inondate da migliaia di email e ticket per domande ripetitive:
-* *"Qual è la scadenza dell'ISEE?"*
-* *"Come calcolo la media ponderata?"*
-* *"Quanto pago di tasse se sono fuori corso?"*
+Ogni anno le segreterie universitarie gestiscono migliaia di richieste ripetitive:
 
-Le risposte esistono, ma sono sepolte in **PDF di 100 pagine** (Bandi, Regolamenti, Guide) che nessuno legge perché complessi e lunghi da consultare.
+- “Come si calcola il voto di laurea?”
+- “Quando scade il bando Erasmus?”
+- “Dove trovo il regolamento tesi?”
+- “Quante tasse pago con questo ISEE?”
+
+Le informazioni esistono ma sono disperse in PDF lunghi, regolamenti scritti in linguaggio burocratico e documenti difficili da navigare.
+
+---
 
 ## 💡 La Soluzione
-**UniLaw AI** è un assistente intelligente che:
-1.  **Ingerisce** i documenti ufficiali (PDF) forniti dall'Ateneo.
-2.  **Indicizza** il contenuto creando una mappa semantica locale.
-3.  **Risponde** alle domande degli studenti citando l'articolo e la pagina esatta.
+**UniLaw AI** risolve il problema con un assistente intelligente che:
 
-**Vantaggi:**
-* 🕒 **Risparmio tempo:** Risposte immediate 24/7.
-* 🎯 **Precisione:** Zero allucinazioni, risponde solo basandosi sui documenti.
-* 🔒 **Privacy:** I dati sensibili non lasciano mai l'infrastruttura dell'ateneo (RAG Locale).
+1. Legge automaticamente tutti i documenti ufficiali.  
+2. Indicizza e comprende il contenuto.  
+3. Risponde in linguaggio naturale citando la fonte.  
+4. Ragiona autonomamente grazie a un Agente ReAct.
+
+### Vantaggi
+- 🕒 Risposte immediate 24/7  
+- 📘 Basate solo su documenti ufficiali  
+- 🔒 Funziona completamente offline  
+- 🎯 Allucinazioni drasticamente ridotte grazie a RAG sui soli documenti ufficiali 
+- 🧠 Capacità di ragionamento multi-step  
 
 ---
 
 ## ⚙️ Architettura Tecnica
 
-Il progetto utilizza un approccio **RAG Puro (Retrieval-Augmented Generation)**:
+### 1️⃣ RAG (Retrieval-Augmented Generation)
+- Estrazione PDF con PyPDFLoader  
+- Chunking (1000 caratteri + overlap 200)  
+- Embeddings con MiniLM-L6-v2  
+- Vector DB locale → ChromaDB  
+- Recupero semantico dei chunk più rilevanti  
 
-1.  **Document Loading:** `PyPDFLoader` estrae il testo dai documenti ufficiali.
-2.  **Chunking:** Il testo viene diviso in blocchi da 1000 caratteri per mantenere il contesto.
-3.  **Embeddings & Vector Store:** Utilizziamo **HuggingFace** (locale) per trasformare il testo in numeri e **ChromaDB** per archiviarli e ricercarli velocemente.
-4.  **Generation (LLM):** Il contesto recuperato viene inviato a **IBM watsonx.ai** (modello `ibm/granite-13b-chat-v2`), che formula la risposta finale.
-5.  **Frontend:** Interfaccia **Streamlit** moderna e reattiva.
+### 2️⃣ Modello LLM Locale — Llama 3.1 8B (Ollama)
+Usato per:
+- interpretare domande  
+- analizzare contesto  
+- generare risposte accurate  
+
+### 3️⃣ Agente ReAct  
+Decide autonomamente come rispondere combinando:
+- ragionamento  
+- uso degli strumenti  
+- recupero informazioni  
+
+### 4️⃣ Redis Cache (opzionale)
+Accelera risposte e memorizza risultati frequenti.
+
+### 5️⃣ UI Streamlit
+- Design moderno  
+- Chat persistente  
+- Indicatori di stato  
+- Sidebar funzionale  
+
+---
+
+## 🧱 Componenti del Sistema
+
+### 📁 Gestione Documenti
+- cartella `documenti/`  
+- parsing PDF  
+- indicizzazione automatica  
+
+### 🔡 Vector Store
+- embeddings HuggingFace  
+- ricerca vettoriale rapida  
+
+### 🧠 LLM
+- Llama 3.1 8B via Ollama  
+- inferenza offline  
+
+### 🤖 Agente
+- Reasoning + Tools  
+- nessuna allucinazione  
+
+### 🛠️ Tools
+#### 🔍 KnowledgeBase_Universitaria
+Ricerca semantica nei PDF.
+
+#### 🧮 calcolatrice_tasse
+Per percentuali, somme e calcoli automatici.
 
 ---
 
 ## 🚀 Installazione
 
 ### Prerequisiti
-* Python 3.9 o superiore
-* Account IBM Cloud (per le API watsonx)
+- Python 3.10+
+- Ollama installato → https://ollama.com
+- Scarica il modello:
+```bash
+ollama pull llama3.1:8b
+```
+- Redis (facoltativo)
 
-### Passaggi
-1.  **Clona il repository:**
-    ```bash
-    git clone [https://github.com/tuo-username/assistente-zero-coda.git](https://github.com/tuo-username/assistente-zero-coda.git)
-    cd assistente-zero-coda
-    ```
+---
 
-2.  **Crea l'ambiente virtuale:**
-    ```bash
-    python -m venv .venv
-    # Windows:
-    .\.venv\Scripts\activate
-    # Mac/Linux:
-    source .venv/bin/activate
-    ```
+### 1️⃣ Clona il repository
+```bash
+git clone https://github.com/Luigi-Carnevale/UniLaw-Agent.git
+cd UniLaw-Agent
+```
 
-3.  **Installa le dipendenze:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+---
+
+### 2️⃣ Crea e attiva l’ambiente virtuale
+```bash
+python -m venv venv
+```
+
+**Linux/macOS:**  
+```bash
+source venv/bin/activate
+```
+
+**Windows:**  
+```bash
+venv\Scripts\activate
+```
+
+---
+
+### 3️⃣ Installa le dipendenze
+```bash
+pip install -r requirements.txt
+```
 
 ---
 
 ## 🔧 Configurazione
 
-1.  Crea una cartella chiamata `documenti` nella root del progetto.
-2.  Inserisci al suo interno i PDF ufficiali (es. `Regolamento_Tasse_2024.pdf`).
-3.  All'avvio, l'app indicizzerà automaticamente qualsiasi file presente in questa cartella.
+1. Assicurati che esista la cartella:
+```
+documenti/
+```
+
+2. Inserisci dentro i PDF ufficiali dell’Ateneo:
+- bandi  
+- regolamenti  
+- guide studenti  
+- RAD  
+- piani di studio  
+- linee guida tesi  
+
+3. All’avvio l’indicizzazione parte automaticamente.
 
 ---
 
 ## ▶️ Utilizzo
 
-Avvia l'applicazione con il comando:
+Avvia l’applicazione:
 ```bash
-streamlit run app_precaricata.py
+streamlit run app_agent.py
+```
 
----
+### All’apertura:
+1. Attendi la creazione della knowledge base  
+2. Apri la sidebar per verificare lo stato  
+3. Fai la tua domanda, ad esempio:
+   - “Requisiti prova finale L‑31?”
+   - “Cosa prevede il regolamento Erasmus?”
+   - “Calcola il 5% di 20.000€”  
 
-## All'apertura:
-
-1. Attendi il caricamento della barra di progresso (Indicizzazione).
-
-2.Apri la barra laterale a sinistra.
-
-3.Inserisci le tue IBM Cloud API Key e Project ID.
-
-4. Fai una domanda in chat (es: "Quali sono le scadenze per l'Erasmus?").
+L’agente:
+- analizza la domanda  
+- decide se usare il VectorDB  
+- utilizza la calcolatrice se necessario  
+- produce una risposta chiara e basata sui documenti  
 
 ---
 
 ## 🔮 Roadmap Futura
 
-[ ] Integrazione con watsonx Orchestrate per automatizzare l'apertura di ticket.
+[ ] Upload PDF direttamente dalla UI  
+[ ] Citazioni precise (pagina PDF)  
+[ ] Supporto multi‑Ateneo  
+[ ] Dashboard richieste  
+[ ] Integrazione SSO universitario  
+[ ] Versione mobile  
+[ ] Esportazione risposte in PDF  
 
-[ ] Supporto multilingua per studenti internazionali.
-
-[ ] Canale vocale (Speech-to-Text) per accessibilità.
+---
