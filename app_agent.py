@@ -3,6 +3,7 @@ import os
 import glob
 import time
 import logging
+import re # Nuovo import per la sanitizzazione
 
 # Nascondo la GPU a PyTorch perché la 1070 non è compatibile
 # (così tutto gira in CPU ed evitiamo errori CUDA con torch)
@@ -157,16 +158,29 @@ def inizializza_conoscenza():
 # --- 2. GLI STRUMENTI DELL'AGENTE (TOOLS) ---
 
 # STRUMENTO A: La Calcolatrice
-# L'Agente capirà da solo QUANDO usare questa funzione.
+# AGGIORNAMENTO SICUREZZA: Sanificazione per evitare l'iniezione di codice (RCE)
 @tool
 def calcolatrice_tasse(espressione: str):
     """Utile SOLO quando devi fare calcoli matematici precisi (somme, percentuali, tasse).
-    Input: una espressione matematica scritta come stringa (es: '20000 * 0.05').
-    Non usare questo strumento per cercare testo."""
+    Input: una espressione matematica scritta come stringa (es: '20000 * 0.05')."""
+    
+    # 1. Pulizia: Rimuovi spazi extra
+    espressione = espressione.strip()
+
+    # 2. Controllo di sicurezza (Whitelist): accetta solo numeri, operatori e parentesi
+    # Questo previene l'esecuzione di comandi non matematici (es: __import__('os').system(...))
+    pattern_sicuro = re.compile(r'^[0-9+\-*/%.()\s]+$')
+    
+    if not pattern_sicuro.match(espressione):
+        return "Errore: L'espressione contiene caratteri non ammessi per sicurezza."
+
     try:
-        return str(eval(espressione))
-    except Exception:
-        return "Errore nel calcolo."
+        # 3. Esecuzione in un ambiente ristretto: impedisce l'accesso a built-ins pericolosi
+        risultato = eval(espressione, {"__builtins__": None}, {})
+        return str(risultato)
+    except Exception as e:
+        # Ritorna un errore chiaro in caso di sintassi matematica non valida
+        return f"Errore di calcolo: {e}"
 
 
 # --- 3. COSTRUZIONE DELL'AGENTE ---
@@ -186,10 +200,10 @@ def get_agent_executor(vector_db):
     )
 
     # 2. Retriever su ChromaDB
-    #    Uso MMR per avere passaggi diversi tra loro (meno ridondanza)
+    #    Uso "similarity" e aumento k per avere più contesto dai PDF
     retriever = vector_db.as_retriever(
-        search_type="mmr",
-        search_kwargs={"k": 5, "fetch_k": 20},
+        search_type="similarity",
+        search_kwargs={"k": 12},  # prendo i 12 chunk più simili
     )
 
     # 3. Funzione RAG manuale: recupera documenti, costruisce il prompt, chiama il modello
@@ -197,6 +211,7 @@ def get_agent_executor(vector_db):
         """
         Esegue RAG manuale:
         - recupera i documenti rilevanti
+        - filtra/prioritizza quelli più sensati per la domanda
         - costruisce il contesto
         - chiama il modello con QA_PROMPT
         - restituisce risposta + estratti + fonti
@@ -206,6 +221,43 @@ def get_agent_executor(vector_db):
         # Se non trova niente di sensato, risponde in modo onesto
         if not docs:
             return "Non lo so in base ai documenti disponibili."
+
+        # Normalizzo la domanda in minuscolo
+        q = question.lower()
+
+        # --- 3.a FILTRO SPECIFICO PER BORSE DI STUDIO ---
+        # Se la domanda parla di borse di studio, concentriamoci sui bandi
+        if "borsa" in q or "borse di studio" in q or "borsa di studio" in q:
+            scholarship_docs = []
+            other_docs = []
+
+            for doc in docs:
+                fname = os.path.basename(doc.metadata.get("source", "")).lower()
+                if "borsa" in fname or "bando" in fname:
+                    scholarship_docs.append(doc)
+                else:
+                    other_docs.append(doc)
+
+            # Se esistono documenti "borsa/bando", usiamo SOLO quelli
+            if scholarship_docs:
+                docs = scholarship_docs
+
+        # --- 3.b ORDINAMENTO PER PRIORITÀ DI NOME FILE ---
+        def doc_priority(doc):
+            fname = os.path.basename(doc.metadata.get("source", "")).lower()
+            score = 0
+            # Più negativo = più importante (viene prima)
+            if "borsa" in fname:
+                score -= 5
+            if "bando" in fname:
+                score -= 4
+            if "tesi" in fname or "prova-finale" in fname or "prova finale" in fname:
+                score -= 2
+            if "guida-studente" in fname or "guida" in fname:
+                score += 2  # la guida la voglio dopo
+            return score
+
+        docs = sorted(docs, key=doc_priority)
 
         # Costruiamo il contesto per il prompt
         context_chunks = []
@@ -264,6 +316,7 @@ def get_agent_executor(vector_db):
             "Se dalle fonti non emerge una risposta chiara, l'assistente deve dire "
             "\"Non lo so in base ai documenti disponibili.\""
         ),
+        return_direct=True,
     )
 
     # 5. Cassetta degli attrezzi: RAG + calcolatrice
@@ -289,12 +342,24 @@ REGOLE:
         tools=tools,
         llm=llm,
         agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-        verbose=True,             # Mostra il ragionamento nel terminale
+        verbose=False,             # Niente log verboso di Thought/Action in console
         handle_parsing_errors=True,
         agent_kwargs={"system_message": system_message},
+        max_iterations=6,   # Limite di sicurezza (si può alzare oppure abbassare) 
+        early_stopping_method="generate", 
     )
 
     return agent
+
+# --- NUOVA FUNZIONE: CACHE PER L'AGENTE ---
+# Questo decoratore assicura che l'agente venga inizializzato una sola volta 
+# e riutilizzato per tutte le domande successive, migliorando la performance.
+@st.cache_resource(show_spinner=False)
+def get_cached_agent(_vector_db):
+    """
+    Crea l'istanza dell'agente e la salva in cache per riutilizzo.
+    """
+    return get_agent_executor(_vector_db)
 
 
 # --- 4. INTERFACCIA UTENTE STREAMLIT ---
@@ -358,8 +423,9 @@ if prompt := st.chat_input(
             with st.status("🧠 L'Agente sta ragionando...", expanded=True) as status:
                 st.write("Analisi della richiesta e scelta dello strumento...")
                 try:
-                    # Creiamo l'agente al volo (con il vector_db già caricato)
-                    agent = get_agent_executor(vector_db)
+                    # --- MODIFICA CHIAVE PER LA PERFORMANCE ---
+                    # Usiamo la funzione cachata. L'agente viene creato solo la prima volta.
+                    agent = get_cached_agent(vector_db)
 
                     # --- QUI AVVIENE LA MAGIA ---
                     # agent.run fa partire il loop ReAct: Pensiero -> Azione -> Osservazione
