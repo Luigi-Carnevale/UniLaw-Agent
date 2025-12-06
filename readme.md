@@ -7,8 +7,8 @@
 ![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red.svg)
 ![Redis](https://img.shields.io/badge/Cache-Redis-darkred.svg)
 
-> **L’AI che legge i bandi, interpreta i regolamenti e risponde agli studenti come un tutor esperto.**
-> UniLaw AI combina RAG locale, Agente ReAct, LLM open‑source, database vettoriale e un'interfaccia moderna per fornire risposte affidabili basate esclusivamente sui documenti ufficiali dell’Ateneo.
+> **Un assistente AI progettato per ridurre a zero le attese degli studenti, automatizzando la consultazione di bandi, regolamenti e documentazione accademica tramite un sistema RAG avanzato.**  
+> UniLaw AI combina RAG locale, agente ReAct, LLM open‑source, database vettoriale e un'interfaccia moderna per fornire risposte affidabili basate esclusivamente sui documenti ufficiali dell’Ateneo.
 
 ---
 
@@ -25,24 +25,26 @@
 ---
 
 ## 🚨 Il Problema
+
 Ogni anno le segreterie universitarie gestiscono migliaia di richieste ripetitive:
 
-- “Come si calcola il voto di laurea?”
-- “Quando scade il bando Erasmus?”
-- “Dove trovo il regolamento tesi?”
+- “Come si calcola il voto di laurea?”  
+- “Quando scade il bando Erasmus?”  
+- “Dove trovo il regolamento tesi?”  
 - “Quante tasse pago con questo ISEE?”
 
-Le informazioni esistono ma sono disperse in PDF lunghi, regolamenti scritti in linguaggio burocratico e documenti difficili da navigare.
+Le informazioni esistono, ma sono disperse in PDF lunghi, regolamenti scritti in linguaggio burocratico e documenti difficili da navigare.
 
 ---
 
 ## 💡 La Soluzione
-**UniLaw AI** risolve il problema con un assistente intelligente che:
 
-1. Legge automaticamente tutti i documenti ufficiali.  
-2. Indicizza e comprende il contenuto.  
-3. Risponde in linguaggio naturale citando la fonte.  
-4. Ragiona autonomamente grazie a un Agente ReAct.
+**UniLaw AI** è un assistente intelligente che:
+
+1. Legge automaticamente i documenti ufficiali dell’Ateneo.  
+2. Indicizza e comprende il contenuto tramite RAG.  
+3. Risponde in linguaggio naturale **citando le fonti**.  
+4. Ragiona in modo autonomo grazie a un **agente ReAct**.
 
 ### Vantaggi
 - 🕒 Risposte immediate 24/7  
@@ -56,69 +58,88 @@ Le informazioni esistono ma sono disperse in PDF lunghi, regolamenti scritti in 
 ## ⚙️ Architettura Tecnica
 
 ### 1️⃣ RAG (Retrieval-Augmented Generation)
-- Estrazione PDF con PyPDFLoader  
-- Chunking (1000 caratteri + overlap 200)  
-- Embeddings con MiniLM-L6-v2  
-- Vector DB locale → ChromaDB  
-- Recupero semantico dei chunk più rilevanti  
+
+- Parsing PDF con PyPDFLoader  
+- Chunking (700 caratteri + overlap 200)  
+- Embeddings MiniLM multilingua  
+- ChromaDB vettoriale  
+- Recupero semantico via MMR
 
 ### 2️⃣ Modello LLM Locale — Llama 3.1 8B (Ollama)
-Usato per:
-- interpretare domande  
-- analizzare contesto  
-- generare risposte accurate  
 
-### 3️⃣ Agente ReAct  
-Decide autonomamente come rispondere combinando:
-- ragionamento  
-- uso degli strumenti  
-- recupero informazioni  
+Usato per: 
+- Interpretare domande
+- Analizzare contesto
+- Generare risposte accurate
 
+### 3️⃣ Agente ReAct
+
+Decide autonomamente come rispondere combinando: 
+- Reasoning multi-step  
+- Uso strumenti intelligenti:
+  - KnowledgeBase_Universitaria  
+  - Calcolatrice_tasse  
+- Recupero informazioni
+  
 ### 4️⃣ Redis Cache (opzionale)
-Accelera risposte e memorizza risultati frequenti.
+
+Accelera risposte e caching LLM.
 
 ### 5️⃣ UI Streamlit
-- Design moderno  
-- Chat persistente  
-- Indicatori di stato  
-- Sidebar funzionale  
+
+- Design moderno
+- Chat persistente
+- Indicatori di stato
+- Sidebar funzionale
 
 ---
 
 ## 🧱 Componenti del Sistema
 
-### 📁 Gestione Documenti
-- cartella `documenti/`  
-- parsing PDF  
-- indicizzazione automatica  
+### Documenti
 
-### 🔡 Vector Store
-- embeddings HuggingFace  
-- ricerca vettoriale rapida  
+Cartella:
+
+```
+documenti/
+```
+
+- Contiene regolamenti, bandi, guide studenti, piani di studio.
+- Parsing PDF
+- Indicizzazione automatica
+
+### Vector Store
+
+ChromaDB + Embeddings HuggingFace.
 
 ### 🧠 LLM
 - Llama 3.1 8B via Ollama  
-- inferenza offline  
+- inferenza offline 
 
-### 🤖 Agente
-- Reasoning + Tools  
-- nessuna allucinazione  
+### Agente
+
+- ReAct con strumenti dedicati.
+- Riduzione drastica delle allucinazioni
 
 ### 🛠️ Tools
 #### 🔍 KnowledgeBase_Universitaria
-Ricerca semantica nei PDF.
 
-#### 🧮 calcolatrice_tasse
-Per percentuali, somme e calcoli automatici.
+- Ricerca semantica nei PDF.
+
+#### 🧮 Calcolatrice_tasse
+- Esegue calcoli matematici tramite espressioni Python
+- Utile per tasse, percentuali, contributi
+
 
 ---
 
 ## 🚀 Installazione
 
 ### Prerequisiti
-- Python 3.10+
-- Ollama installato → https://ollama.com
-- Scarica il modello:
+
+- Python 3.10+  
+- Ollama installato → https://ollama.com  
+- Modello:  
 ```bash
 ollama pull llama3.1:8b
 ```
@@ -126,32 +147,26 @@ ollama pull llama3.1:8b
 
 ---
 
-### 1️⃣ Clona il repository
+### 1️⃣ Clona repo
+
 ```bash
 git clone https://github.com/Luigi-Carnevale/UniLaw-Agent.git
 cd UniLaw-Agent
 ```
 
----
+### 2️⃣ Ambiente virtuale
 
-### 2️⃣ Crea e attiva l’ambiente virtuale
+**Creazione**  
 ```bash
-python -m venv venv
+python -m venv venv   # Creazione
+```
+**Attivazione**  
+```bash
+source venv/bin/activate   # per Linux/macOS
+venv\Scripts\activate    # per Windows
 ```
 
-**Linux/macOS:**  
-```bash
-source venv/bin/activate
-```
-
-**Windows:**  
-```bash
-venv\Scripts\activate
-```
-
----
-
-### 3️⃣ Installa le dipendenze
+### 3️⃣ Installazione delle dipendenze
 ```bash
 pip install -r requirements.txt
 ```
@@ -179,12 +194,12 @@ documenti/
 
 ## ▶️ Utilizzo
 
-Avvia l’applicazione:
+Avvia l'applicazione: 
 ```bash
 streamlit run app_agent.py
 ```
 
-### All’apertura:
+## All’apertura:
 1. Attendi la creazione della knowledge base  
 2. Apri la sidebar per verificare lo stato  
 3. Fai la tua domanda, ad esempio:
@@ -196,18 +211,17 @@ L’agente:
 - analizza la domanda  
 - decide se usare il VectorDB  
 - utilizza la calcolatrice se necessario  
-- produce una risposta chiara e basata sui documenti  
+- produce una risposta chiara e basata sui documenti 
 
 ---
 
 ## 🔮 Roadmap Futura
 
-[ ] Upload PDF direttamente dalla UI  
-[ ] Citazioni precise (pagina PDF)  
-[ ] Supporto multi‑Ateneo  
-[ ] Dashboard richieste  
-[ ] Integrazione SSO universitario  
-[ ] Versione mobile  
-[ ] Esportazione risposte in PDF  
+- Upload PDF via UI  
+- Citazioni pagina PDF  
+- Dashboard richieste  
+- Login SSO  
+- PWA mobile  
+- Esportazione risposte in PDF  
 
 ---
