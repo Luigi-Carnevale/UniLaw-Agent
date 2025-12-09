@@ -1,6 +1,6 @@
-echo "venv/" >> .gitignore
-echo "__pycache__/" >> .gitignore
-echo "chromadb/" >> .gitignore
-echo "*.db" >> .gitignore
-echo "*.log" >> .gitignore
-echo ".DS_Store" >> .gitignore
+venv/
+__pycache__/
+chroma_db_storage/
+*.db
+*.log
+.DS_Store
