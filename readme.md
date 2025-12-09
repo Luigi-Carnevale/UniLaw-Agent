@@ -1,21 +1,22 @@
 # 🎓 UniLaw AI – Assistente Zero-Coda
 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Llama 3.1](https://img.shields.io/badge/AI-Llama%203.1%208B-ff69b4.svg)
 ![LangChain](https://img.shields.io/badge/Framework-LangChain-green.svg)
 ![ChromaDB](https://img.shields.io/badge/VectorDB-ChromaDB-purple.svg)
 ![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red.svg)
-![Redis](https://img.shields.io/badge/Cache-Redis-darkred.svg)
+![GPU](https://img.shields.io/badge/Hardware-GPU%20Accelerated-orange.svg)
 
-> **Un assistente AI progettato per ridurre a zero le attese degli studenti, automatizzando la consultazione di bandi, regolamenti e documentazione accademica tramite un sistema RAG avanzato.**  
-> UniLaw AI combina RAG locale, agente ReAct, LLM open‑source, database vettoriale e un'interfaccia moderna per fornire risposte affidabili basate esclusivamente sui documenti ufficiali dell’Ateneo.
+
+> **Un motore RAG di precisione progettato per eliminare le allucinazioni e garantire risposte "notarili" su bandi e regolamenti universitari.** > UniLaw AI abbandona l'approccio probabilistico generico in favore di un'architettura deterministica con **Router Semantico**, **Macro-Chunking** per la lettura di tabelle complesse e un **Engine Custom** ottimizzato per GPU NVIDIA.
 
 ---
 
 ## 📋 Indice
 1. [Il Problema](#-il-problema) 
 2. [La Soluzione](#-la-soluzione)
-3. [Architettura Tecnica](#️-architettura-tecnica)
+3. [Nuova Architettura Tecnica](#️-nuova-architettura-tecnica)
 4. [Componenti del Sistema](#-componenti-del-sistema)
 5. [Installazione](#-installazione)
 6. [Configurazione](#-configurazione)
@@ -26,131 +27,80 @@
 
 ## 🚨 Il Problema
 
-Ogni anno le segreterie universitarie gestiscono migliaia di richieste ripetitive:
-
-- “Come si calcola il voto di laurea?”  
-- “Quando scade il bando Erasmus?”  
-- “Dove trovo il regolamento tesi?”  
-- “Quante tasse pago con questo ISEE?”
-
-Le informazioni esistono, ma sono disperse in PDF lunghi, regolamenti scritti in linguaggio burocratico e documenti difficili da navigare.
+I sistemi RAG tradizionali falliscono su documenti burocratici complessi:
+- **Spezzano le tabelle:** I chunk piccoli rendono illeggibili i requisiti ISEE o i voti TOLC.
+- **Confondono i contesti:** Cercando "scadenze", l'AI mischia le date della Borsa di Studio con quelle dell'Erasmus.
+- **Allucinano:** Inventano regole quando non trovano il paragrafo esatto.
 
 ---
 
 ## 💡 La Soluzione
 
-**UniLaw AI** è un assistente intelligente che:
+**UniLaw AI** evolve il concetto di assistente universitario passando da un "Chatbot Generico" a un **"Notaio Digitale"**.
 
-1. Legge automaticamente i documenti ufficiali dell’Ateneo.  
-2. Indicizza e comprende il contenuto tramite RAG.  
-3. Risponde in linguaggio naturale **citando le fonti**.  
-4. Ragiona in modo autonomo grazie a un **agente ReAct**.
-
-### Vantaggi
-- 🕒 Risposte immediate 24/7  
-- 📘 Basate solo su documenti ufficiali  
-- 🔒 Funziona completamente offline  
-- 🎯 Allucinazioni drasticamente ridotte grazie a RAG sui soli documenti ufficiali 
-- 🧠 Capacità di ragionamento multi-step  
+1. **Router Deterministico:** Capisce l'intento (es. "TOLC") e **blocca fisicamente** l'accesso ai documenti non pertinenti (es. Bando Tasse).
+2. **Macro-Chunking:** Legge blocchi di **2500 caratteri** (pagine intere) preservando tabelle e articoli di legge nella loro integrità.
+3. **Precisione Assoluta:** Istruito per copiare dati numerici esatti (Euro, CFU, Voti) senza interpretarli.
+4. **Deep Reading:** Sfrutta la GPU per analizzare contesti molto ampi (fino a 12k token).
 
 ---
 
-## ⚙️ Architettura Tecnica
+## ⚙️ Nuova Architettura Tecnica
 
-### 1️⃣ RAG (Retrieval-Augmented Generation)
+### 1️⃣ Data Ingestion (Macro-Chunking)
+- **Parser:** `PDFPlumberLoader` (essenziale per l'estrazione accurata di tabelle e layout complessi).
+- **Chunking:** Dimensione aumentata a **2500 caratteri** (con overlap 500) per mantenere uniti articoli di regolamento e griglie di dati.
+- **Metadati:** Arricchimento automatico per il filtraggio deterministico.
 
-- Parsing PDF con PyPDFLoader  
-- Chunking (700 caratteri + overlap 200)  
-- Embeddings MiniLM multilingua  
-- ChromaDB vettoriale  
-- Recupero semantico via MMR
+### 2️⃣ Core Engine (UniLaw Custom)
+Non usiamo più agenti LangChain generici (lenti e imprecisi), ma una pipeline custom:
+- **Semantic Router:** Una logica condizionale che seleziona il "Documento Sacro" in base alla domanda.
+- **Ranking "Cecchino":** Algoritmo di re-ranking che premia i paragrafi contenenti parole chiave critiche (es. "Art. 4", "ISEE", "Tabella 1").
+- **Context Stuffing:** Riempimento intelligente della memoria della GPU fino al limite fisico.
 
-### 2️⃣ Modello LLM Locale — Llama 3.1 8B (Ollama)
-
-Usato per: 
-- Interpretare domande
-- Analizzare contesto
-- Generare risposte accurate
-
-### 3️⃣ Agente ReAct
-
-Decide autonomamente come rispondere combinando: 
-- Reasoning multi-step  
-- Uso strumenti intelligenti:
-  - KnowledgeBase_Universitaria  
-  - Calcolatrice_tasse  
-- Recupero informazioni
-  
-### 4️⃣ Redis Cache (opzionale)
-
-Accelera risposte e caching LLM.
-
-### 5️⃣ UI Streamlit
-
-- Design moderno
-- Chat persistente
-- Indicatori di stato
-- Sidebar funzionale
+### 3️⃣ LLM & Hardware
+- **Modello:** Llama 3.1 8B (Quantizzato).
+- **Hardware:** Ottimizzato per **NVIDIA GTX 1070** (8GB VRAM).
+- **Settings:** `temperature=0.0` (Creatività annullata per massima fedeltà) e `num_ctx=12288`.
 
 ---
 
 ## 🧱 Componenti del Sistema
 
-### Documenti
+### 📂 Documenti
+Cartella `documenti/` contenente i PDF ufficiali (Regolamenti, RAD, Bandi).  
+Il sistema ora gestisce perfettamente:
+- Tabelle ISEE
+- Griglie voti TOLC
+- Elenchi puntati complessi
 
-Cartella:
+### 🧠 UniLaw Engine
+Il cuore del sistema. Sostituisce l'agente ReAct con una logica:
+1. **Analisi Intento:** (TOLC? Soldi? Tesi?)
+2. **Target Lock:** Selezione esclusiva del file pertinente.
+3. **Extraction:** Prelievo dei dati esatti.
 
-```
-documenti/
-```
-
-- Contiene regolamenti, bandi, guide studenti, piani di studio.
-- Parsing PDF
-- Indicizzazione automatica
-
-### Vector Store
-
-ChromaDB + Embeddings HuggingFace.
-
-### 🧠 LLM
-- Llama 3.1 8B via Ollama  
-- inferenza offline 
-
-### Agente
-
-- ReAct con strumenti dedicati.
-- Riduzione drastica delle allucinazioni
+### 🛡️ Prompt "Notaio"
+Un set di istruzioni di sistema (`config.py`) che obbliga l'AI a:
+- Usare la terminologia esatta ("Sconsigliata" vs "Vietata").
+- Riportare cifre esatte.
+- Dichiarare se un'informazione è assente invece di inventarla.
 
 ### 🛠️ Tools
-#### 🔍 KnowledgeBase_Universitaria
-
-- Ricerca semantica nei PDF.
-
-#### 🧮 Calcolatrice_tasse
-- Esegue calcoli matematici tramite espressioni Python
-- Utile per tasse, percentuali, contributi
-
+- **Calcolatrice Sicura:** Esecuzione sandboxata di espressioni matematiche per calcoli rapidi.
 
 ---
 
 ## 🚀 Installazione
 
 ### Prerequisiti
-
 - Python 3.10+  
-- Ollama installato → https://ollama.com  
-- Modello:  
+- **Ollama** installato e funzionante.
+- GPU NVIDIA consigliata (ma funziona anche su CPU, più lentamente).
+
+### 1️⃣ Setup
 ```bash
-ollama pull llama3.1:8b
-```
-- Redis (facoltativo)
-
----
-
-### 1️⃣ Clona repo
-
-```bash
-git clone https://github.com/Luigi-Carnevale/UniLaw-Agent.git
+git clone [https://github.com/Luigi-Carnevale/UniLaw-Agent.git](https://github.com/Luigi-Carnevale/UniLaw-Agent.git)
 cd UniLaw-Agent
 ```
 
@@ -190,6 +140,8 @@ documenti/
 
 3. All’avvio l’indicizzazione parte automaticamente.
 
+4. Importante: Al primo avvio (o se cambi i PDF), usa il pulsante "Aggiorna Documenti" nella sidebar per creare i Macro-Chunk ottimizzati.
+
 ---
 
 ## ▶️ Utilizzo
@@ -200,28 +152,42 @@ streamlit run app_agent.py
 ```
 
 ## All’apertura:
-1. Attendi la creazione della knowledge base  
-2. Apri la sidebar per verificare lo stato  
-3. Fai la tua domanda, ad esempio:
-   - “Requisiti prova finale L‑31?”
-   - “Cosa prevede il regolamento Erasmus?”
-   - “Calcola il 5% di 20.000€”  
 
-L’agente:
-- analizza la domanda  
-- decide se usare il VectorDB  
-- utilizza la calcolatrice se necessario  
-- produce una risposta chiara e basata sui documenti 
+### 1. Primo avvio:   
+Attendi che il terminale completi la "Lettura Profonda (Macro-Chunk) dei PDF. È un'operazione una tantum per indicizzare tabelle e articoli interi. 
+
+### 2. Verifica
+Apri la sidebar. Se hai aggiunto nuovi file, premi "🔄 Aggiorna Documenti". 
+
+### 3. Interazione
+Fai domande specifiche per testare la precisione "Notarile":
+
+#### 3.1 Esempi: 
+- "Ho fatto  12 punti al TOLC, sono ammesso?" (Test Router Accesso)
+- "Qual'è il limite ISEE estratto per la borsa?" (Test Router Borsa + Estrazione Numeri)
+- "Calcola il 20% di 24.000" (Test Tool Calcolatrice)
+
+## Cosa succede dietro le quinte? 
+L’agente segue una pipeline rigorosa:
+### Analisi intento: 
+- Se è un calcolo (es. "20000 * 5%"), esegue la Calcolatrice Sandbox.
+- Se è una domanda (es. "Scadenza TOLC"), attiva il Semantic Router.
+### Target Lock:
+- Il sistema identifica l'argomento (es. Ammissione) e blocca l'accesso ai documenti irrilevanti (es. Bando Tasse), prevenendo contaminazioni.
+### Deep Retrieval
+- La GPU recupera intere pagine o articoli di regolamento (2500 caratteri) per preservare il contesto di tabelle e liste.
+### Risposta "Notarile"
+- L'LLM estrae i dati esatti (cifre, date, voti) senza riassunti approssimativi.
 
 ---
 
 ## 🔮 Roadmap Futura
 
 - Upload PDF via UI  
-- Citazioni pagina PDF  
+- Citazione puntuale con link alla pagina del PDF.
+- Esportazione risposte in PDF 
 - Dashboard richieste  
-- Login SSO  
-- PWA mobile  
-- Esportazione risposte in PDF  
+- Modalità "Confronto" (es. differenze tra Bando 2024 e 2025).
+- Login SSO   
 
 ---
