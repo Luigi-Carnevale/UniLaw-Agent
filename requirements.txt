@@ -99,6 +99,7 @@ orjson==3.11.4
 overrides==7.7.0
 packaging==23.2
 pandas==2.3.3
+pdfplumber
 pillow==10.4.0
 posthog==7.0.1
 propcache==0.4.1
