@@ -1,21 +1,20 @@
 # 🎓 UniLaw AI – Assistente Zero-Coda
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)
 ![Llama 3.1](https://img.shields.io/badge/AI-Llama%203.1%208B-ff69b4.svg)
 ![LangChain](https://img.shields.io/badge/Framework-LangChain-green.svg)
 ![ChromaDB](https://img.shields.io/badge/VectorDB-ChromaDB-purple.svg)
 ![Streamlit](https://img.shields.io/badge/Frontend-Streamlit-red.svg)
 ![GPU](https://img.shields.io/badge/Hardware-GPU%20Accelerated-orange.svg)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-
-> **Un motore RAG di precisione progettato per eliminare le allucinazioni e garantire risposte "notarili" su bandi e regolamenti universitari.** > UniLaw AI abbandona l'approccio probabilistico generico in favore di un'architettura deterministica con **Router Semantico**, **Macro-Chunking** per la lettura di tabelle complesse e un **Engine Custom** ottimizzato per GPU NVIDIA.
+> **Un motore RAG di precisione progettato per trasformare il labirinto burocratico universitario in risposte immediate e "notarili".** > UniLaw AI elimina le code in segreteria e le allucinazioni dell'IA generica, utilizzando un'architettura deterministica con **Router Semantico** e **Macro-Chunking**.
 
 ---
 
 ## 📋 Indice
-1. [Il Problema](#-il-problema) 
-2. [La Soluzione](#-la-soluzione)
+1. [Il Problema](#-il-problema-il-labirinto-burocratico) 
+2. [La Soluzione](#-la-soluzione-un-notaio-digitale)
 3. [Nuova Architettura Tecnica](#️-nuova-architettura-tecnica)
 4. [Componenti del Sistema](#-componenti-del-sistema)
 5. [Installazione](#-installazione)
@@ -25,23 +24,32 @@
 
 ---
 
-## 🚨 Il Problema
+## 🚨 Il Problema: Il "Labirinto Burocratico"
 
-I sistemi RAG tradizionali falliscono su documenti burocratici complessi:
-- **Spezzano le tabelle:** I chunk piccoli rendono illeggibili i requisiti ISEE o i voti TOLC.
-- **Confondono i contesti:** Cercando "scadenze", l'AI mischia le date della Borsa di Studio con quelle dell'Erasmus.
-- **Allucinano:** Inventano regole quando non trovano il paragrafo esatto.
+Ogni anno, studenti e segreterie si scontrano con tre ostacoli critici:
+
+1.  **Frammentazione dell'Informazione:** Le regole sono disperse in decine di PDF (Bandi, RAD, Regolamenti Didattici, Guide). Capire se si ha un *OFA* o se si rientra nella *No Tax Area* richiede di incrociare dati da 3 documenti diversi.
+2.  **Il Limite di ChatGPT:** Se chiedi a un'IA generica *"Qual è la scadenza per la borsa di studio?"*, questa inventa una data plausibile ma falsa (allucinazione), perché non conosce il bando specifico del tuo Ateneo per l'anno corrente.
+3.  **Il "Muro" del Linguaggio:** I documenti usano un linguaggio tecnico ("coorte", "ISEE parificato", "CFU caratterizzanti") che confonde le matricole, generando migliaia di ticket ripetitivi per le segreterie.
 
 ---
 
-## 💡 La Soluzione
+## 💡 La Soluzione: Un "Notaio Digitale"
 
-**UniLaw AI** evolve il concetto di assistente universitario passando da un "Chatbot Generico" a un **"Notaio Digitale"**.
+**UniLaw AI** non è un semplice chatbot. È un motore di consultazione che agisce con il rigore di un funzionario esperto.
 
-1. **Router Deterministico:** Capisce l'intento (es. "TOLC") e **blocca fisicamente** l'accesso ai documenti non pertinenti (es. Bando Tasse).
-2. **Macro-Chunking:** Legge blocchi di **2500 caratteri** (pagine intere) preservando tabelle e articoli di legge nella loro integrità.
-3. **Precisione Assoluta:** Istruito per copiare dati numerici esatti (Euro, CFU, Voti) senza interpretarli.
-4. **Deep Reading:** Sfrutta la GPU per analizzare contesti molto ampi (fino a 12k token).
+Invece di "indovinare", il sistema:
+1.  **Isola il contesto:** Se chiedi di *Tasse*, chiude a chiave i documenti sulla *Didattica* (niente interferenze).
+2.  **Legge tutto:** Usa la GPU per leggere intere pagine di regolamento (Macro-Chunking), preservando tabelle complesse e liste puntate che i RAG normali spezzano.
+3.  **Cita le fonti:** Ogni risposta è ancorata a un documento ufficiale preciso (es. *Art. 4 del Bando Borsa*).
+
+### Perché UniLaw è diverso?
+
+| Feature | Chatbot Generico (ChatGPT/Gemini) | RAG Standard | 🎓 UniLaw AI |
+| :--- | :--- | :--- | :--- |
+| **Fonte Dati** | Internet (generico, spesso obsoleto) | Frammenti di PDF a caso | **Router Deterministico** (Solo il PDF giusto) |
+| **Precisione** | Bassa (Allucina date e regole) | Media (Perde il contesto delle tabelle) | **Massima** (Copia cifre e norme esatte) |
+| **Privacy** | Dati inviati al cloud | Dati inviati al cloud | **100% Locale & Offline** |
 
 ---
 
