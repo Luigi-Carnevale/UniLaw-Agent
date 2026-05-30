@@ -1,0 +1,4 @@
+# Dipendenze di sviluppo (test e valutazione).
+# Non necessarie per eseguire l'applicazione, solo per `python -m pytest`.
+# Installazione:  python -m pip install -r requirements-dev.txt
+pytest>=8,<9

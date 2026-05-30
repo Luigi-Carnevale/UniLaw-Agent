@@ -1,0 +1,107 @@
+# ======================
+# Python
+# ======================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python build / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ======================
+# Streamlit
+# ======================
+.streamlit/secrets.toml
+
+# ======================
+# Local environment files
+# ======================
+.env
+.env.*
+!.env.example
+
+# ======================
+# Logs and temporary files
+# ======================
+*.log
+logs/
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# ======================
+# IDE / editor
+# ======================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ======================
+# Jupyter / notebooks checkpoints
+# ======================
+.ipynb_checkpoints/
+
+# ======================
+# ChromaDB local index
+# ======================
+# For a clean repository, keep this ignored.
+# The app can rebuild the index from the PDFs in documenti/.
+.chroma_db/
+
+# Manifest generated for the local vector index
+index_manifest.json
+
+# ======================
+# Hugging Face / model cache
+# ======================
+.cache/
+.cache_huggingface/
+huggingface_cache/
+
+# ======================
+# Optional generated outputs
+# ======================
+output/
+outputs/
+exports/
+
+# ======================
+# LaTeX generated files, if documentation is compiled locally
+# ======================
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+
+# ======================
+# Deliverable generati (export di docs/*.md): si versionano solo i sorgenti .md
+# I PDF del corpus in documenti/ NON sono toccati (regola ancorata alla root con /).
+# ======================
+/*.docx
+/*.pptx
+/*.pdf
+
+# LibreOffice/OpenOffice lock files
+.~lock.*#
