@@ -1,0 +1,115 @@
+{
+  "n": 13,
+  "hit_vector": 13,
+  "hit_hybrid": 13,
+  "improved": 0,
+  "equal": 13,
+  "worsened": 0,
+  "topk_identical": 9,
+  "rows": [
+    {
+      "id": "q01",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q02",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q03",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q04",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q05",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q06",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q07",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q08",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q09",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q14",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q15",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q16",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q20",
+      "rank_vector": 1,
+      "rank_hybrid": 1,
+      "hit_vector": true,
+      "hit_hybrid": true,
+      "topk_identical": false
+    }
+  ]
+}
