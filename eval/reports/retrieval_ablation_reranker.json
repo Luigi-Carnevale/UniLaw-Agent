@@ -1,0 +1,119 @@
+{
+  "comparison": [
+    "hybrid",
+    "hyb+ce"
+  ],
+  "n": 13,
+  "hit_hybrid": 13,
+  "hit_hyb+ce": 13,
+  "improved": 0,
+  "equal": 7,
+  "worsened": 6,
+  "topk_identical": 3,
+  "rows": [
+    {
+      "id": "q01",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 5,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q02",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 2,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q03",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 2,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q04",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 1,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q05",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 1,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q06",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 1,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q07",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 1,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q08",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 1,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": true
+    },
+    {
+      "id": "q09",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 2,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q14",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 3,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q15",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 1,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q16",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 2,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    },
+    {
+      "id": "q20",
+      "rank_hybrid": 1,
+      "rank_hyb+ce": 1,
+      "hit_hybrid": true,
+      "hit_hyb+ce": true,
+      "topk_identical": false
+    }
+  ]
+}
