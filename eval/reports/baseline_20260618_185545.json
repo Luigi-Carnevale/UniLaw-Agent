@@ -1,0 +1,1245 @@
+{
+  "generated_at": "2026-06-18T18:55:45",
+  "model": "llama3.1:8b",
+  "summary": {
+    "total_questions": 40,
+    "behavior_accuracy": 0.9,
+    "course_accuracy": 1.0,
+    "topic_accuracy": 1.0,
+    "retrieval_hit_rate": 1.0,
+    "citation_hit_rate": 1.0,
+    "abstention_rate": 0.923,
+    "abstention_reason_accuracy": 0.923,
+    "answerable_count": 27,
+    "answerable_with_docs_count": 27,
+    "negative_count": 13,
+    "reason_labelled_count": 13,
+    "llm_unavailable_count": 0,
+    "behavior_from_trace": 40,
+    "behavior_from_text": 0
+  },
+  "results": [
+    {
+      "id": "q01",
+      "category": "easy",
+      "question": "Ho preso 11 al TOLC-I per Informatica L-31: posso immatricolarmi?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": "accesso_informatica_tolc",
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "selected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: **Sì, puoi immatricolarti, ma con OFA.** Dettaglio: il punteggio TOLC-I/Ris\\_Test pari a **11** rientra nella fascia **>= 9 e < 16**. La conseguenza indicata è: **immatricolazione con OFA**. [F1] regolamento-di-accesso-informatical-31-.pdf, pag. 1 | Punteggio Ris\\_Test | Esito per l'"
+    },
+    {
+      "id": "q02",
+      "category": "easy",
+      "question": "Come funziona l'accesso a Informatica L-31 in base al punteggio del TOLC-I?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": "accesso_informatica_tolc",
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "selected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: l'accesso a Informatica L-31 dipende dal punteggio TOLC-I/Ris\\_Test. Le fonti distinguono tre fasce principali. [F1] regolamento-di-accesso-informatical-31-.pdf, pag. 1 | Punteggio Ris\\_Test | Esito per l'immatricolazione | Conseguenza | |---|---|---| | < 9 | Immatricolazione sconsig"
+    },
+    {
+      "id": "q03",
+      "category": "hard",
+      "question": "Ho ottenuto 8 al TOLC-I per Informatica: posso iscrivermi direttamente?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": "accesso_informatica_tolc",
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "selected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: **No, l'immatricolazione diretta è sconsigliata o non prevista secondo le fonti disponibili.** Dettaglio: il punteggio TOLC-I/Ris\\_Test pari a **8** rientra nella fascia **< 9**. La conseguenza indicata è: **percorso di preparazione o recupero**. [F1] regolamento-di-accesso-informati"
+    },
+    {
+      "id": "q04",
+      "category": "easy",
+      "question": "Com'è strutturata la prova di ammissione a Scienze dell'Educazione L-19?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "scienze_educazione",
+      "detected_course": "scienze_educazione",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "selected_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "cited_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "La prova di ammissione al corso di Scienze dell'Educazione L-19 è strutturata come segue: * Durata: 2 ore e 30 minuti * Numero di quesiti: 80 * Tipo di risposta: a risposta multipla (una sola risposta esatta tra le cinque indicate) * Argomenti trattati: + Cultura generale (letterario-linguistica, st"
+    },
+    {
+      "id": "q05",
+      "category": "hard",
+      "question": "C'è un TOLC per accedere a Scienze dell'Educazione L-19?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "scienze_educazione",
+      "detected_course": "scienze_educazione",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "selected_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "cited_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: Sì, esiste una prova di ammissione per accedere al corso di Scienze dell'Educazione L-19. Dettaglio: La prova di ammissione consiste nella soluzione di 80 quesiti a risposta multipla su argomenti di cultura generale, conoscenze di base di lingua inglese, abilità logiche ed analitiche"
+    },
+    {
+      "id": "q06",
+      "category": "easy",
+      "question": "Quali documenti devo consegnare al termine della mobilità Erasmus?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "erasmus",
+      "detected_topic": "erasmus",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "media",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "selected_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "cited_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: Devi consegnare la Breve relazione (max due pagine sull’esperienza di mobilità) e il Modulo “Riconoscimento attività didattica mobilità per studio ” con gli esami da convalidare e gli esami sostenuti in mobilità, nonché le date in cui sono state sostenute le prove d’esame. Cosa fare:"
+    },
+    {
+      "id": "q07",
+      "category": "easy",
+      "question": "Come sono organizzate le graduatorie della borsa di studio?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "borsa",
+      "detected_topic": "borsa",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "media",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "selected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "cited_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: Le graduatorie della borsa di studio sono suddivise per anno di corso e per corso di laurea, con gli studenti collocati in ordine di indice di merito (IM) decrescente e di numero crescente di bonus assegnato. Dettaglio: Secondo il Bando Borsa di studio 25-26.pdf, pag. 32, le graduato"
+    },
+    {
+      "id": "q08",
+      "category": "easy",
+      "question": "Quali sono i requisiti principali per la borsa di studio?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "borsa",
+      "detected_topic": "borsa",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "selected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "cited_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: I requisiti principali per la borsa di studio sono determinati in base ai requisiti di natura economica e di merito, come specificato nel Bando Borsa di studio 25-26.pdf. Dettaglio: Secondo il Bando Borsa di studio 25-26.pdf (pag. 12), i requisiti di natura economica sono determinati"
+    },
+    {
+      "id": "q09",
+      "category": "malformed",
+      "question": "tolc informatica 11 ofa???",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": "accesso_informatica_tolc",
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "selected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: **Sì, puoi immatricolarti, ma con OFA.** Dettaglio: il punteggio TOLC-I/Ris\\_Test pari a **11** rientra nella fascia **>= 9 e < 16**. La conseguenza indicata è: **immatricolazione con OFA**. [F1] regolamento-di-accesso-informatical-31-.pdf, pag. 1 | Punteggio Ris\\_Test | Esito per l'"
+    },
+    {
+      "id": "q10",
+      "category": "out_of_domain",
+      "question": "Quali sono le regole di accesso al corso di Medicina e Chirurgia?",
+      "expected_behavior": "unknown_course",
+      "predicted_behavior": "unknown_course",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "fuori_dominio_corso",
+      "detected_abstention_reason": "fuori_dominio_corso",
+      "expected_docs": [],
+      "selected_docs": [],
+      "cited_docs": [],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Non posso rispondere in modo affidabile su questo corso usando i documenti attualmente indicizzati. I corsi riconosciuti dal sistema sono: - Informatica L-31 - Scienze dell'educazione L-19 - Scienze dell'amministrazione L-16 Se hai aggiunto documenti relativi a questo corso nella cartella `documenti"
+    },
+    {
+      "id": "q11",
+      "category": "out_of_domain",
+      "question": "Come ci si immatricola al corso di Giurisprudenza?",
+      "expected_behavior": "unknown_course",
+      "predicted_behavior": "unknown_course",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "fuori_dominio_corso",
+      "detected_abstention_reason": "fuori_dominio_corso",
+      "expected_docs": [],
+      "selected_docs": [],
+      "cited_docs": [],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Non posso rispondere in modo affidabile su questo corso usando i documenti attualmente indicizzati. I corsi riconosciuti dal sistema sono: - Informatica L-31 - Scienze dell'educazione L-19 - Scienze dell'amministrazione L-16 Se hai aggiunto documenti relativi a questo corso nella cartella `documenti"
+    },
+    {
+      "id": "q12",
+      "category": "ambiguous",
+      "question": "Come funziona l'accesso?",
+      "expected_behavior": "clarify",
+      "predicted_behavior": "clarify",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "ambigua",
+      "detected_abstention_reason": "ambigua",
+      "expected_docs": [],
+      "selected_docs": [],
+      "cited_docs": [],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "La domanda è ambigua: indica il corso di laurea a cui ti riferisci. Posso rispondere, ad esempio, per: - Informatica L-31 - Scienze dell'educazione L-19 - Scienze dell'amministrazione L-16"
+    },
+    {
+      "id": "q13",
+      "category": "ambiguous",
+      "question": "Quali insegnamenti ci sono nel piano di studi?",
+      "expected_behavior": "clarify",
+      "predicted_behavior": "clarify",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "piano_studi",
+      "detected_topic": "piano_studi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "ambigua",
+      "detected_abstention_reason": "ambigua",
+      "expected_docs": [],
+      "selected_docs": [],
+      "cited_docs": [],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "La domanda è ambigua: indica il corso di laurea a cui ti riferisci. Posso rispondere, ad esempio, per: - Informatica L-31 - Scienze dell'educazione L-19 - Scienze dell'amministrazione L-16"
+    },
+    {
+      "id": "q14",
+      "category": "hard",
+      "question": "La tesi di Informatica L-31 è consultabile dopo la laurea?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "abstain",
+      "behavior_source": "trace",
+      "behavior_ok": false,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "tesi",
+      "detected_topic": "tesi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": "evidenza_insufficiente",
+      "expected_docs": [
+        "regolamento-tesi-2023.pdf"
+      ],
+      "selected_docs": [
+        "regolamento-tesi-2023.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-tesi-2023.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Non lo so in base ai documenti disponibili. [F1] e [F2] riguardano il regolamento generale per la tutela e la consultabilità delle Tesi, ma non specificano nulla sull'accesso alle Tesi dei corsi di laurea in Informatica L-31. --- Fonti citate: - [F1] regolamento-tesi-2023.pdf, pag. 3 - [F2] regolame"
+    },
+    {
+      "id": "q15",
+      "category": "easy",
+      "question": "Quali regole devo seguire per preparare il piano di studi di Informatica L-31?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "piano_studi",
+      "detected_topic": "piano_studi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "media",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "piano-di-studi-l31-informatica2025-2026.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "selected_docs": [
+        "piano-di-studi-l31-informatica2025-2026.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "cited_docs": [
+        "piano-di-studi-l31-informatica2025-2026.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: Per preparare il piano di studi di Informatica L-31, devi considerare le attività a scelta libera dello studente elencate nel [F1] piano-di-studi-l31-informatica2025-2026.pdf, pag. 3. Dettaglio: Il corso di laurea in Informatica L-31 prevede 13 attività a scelta libera dello studente"
+    },
+    {
+      "id": "q16",
+      "category": "synonym",
+      "question": "Come si svolge la discussione di laurea per Informatica L-31?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "tesi",
+      "detected_topic": "tesi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "Regolamento-della–prova–finale-informatica-l31.pdf"
+      ],
+      "selected_docs": [
+        "Regolamento-della–prova–finale-informatica-l31.pdf",
+        "guida-3.0-tesi-online-studenti.pdf"
+      ],
+      "cited_docs": [
+        "Regolamento-della–prova–finale-informatica-l31.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: La discussione finale della prova finale per l'Informatica L-31 è valutata con 2 punti se lo studente si laurea in corso e 1 punto se la laurea avviene nel primo anno fuori corso [F1]. Dettaglio: La discussione finale è una parte importante della prova finale, dove lo studente presen"
+    },
+    {
+      "id": "q17",
+      "category": "no_answer",
+      "question": "Qual è l'orario delle lezioni di Informatica L-31?",
+      "expected_behavior": "abstain",
+      "predicted_behavior": "abstain",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": null,
+      "detected_topic": null,
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "evidenza_insufficiente",
+      "detected_abstention_reason": "evidenza_insufficiente",
+      "expected_docs": [],
+      "selected_docs": [
+        "piano-di-studi-l31-informatica2025-2026.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "cited_docs": [
+        "piano-di-studi-l31-informatica2025-2026.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Non lo so in base ai documenti disponibili. --- Documenti consultati (nessuno utilizzato per la risposta): - [F1] piano-di-studi-l31-informatica2025-2026.pdf, pag. 1 - [F2] regolamento-l31-informatica.pdf, pag. 12 - [F3] regolamento-l31-informatica.pdf, pag. 6 _Astensione — Fonte presente ma insuffi"
+    },
+    {
+      "id": "q18",
+      "category": "no_answer",
+      "question": "Quanto costa la mensa universitaria?",
+      "expected_behavior": "abstain",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": false,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": null,
+      "detected_topic": null,
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "evidenza_insufficiente",
+      "detected_abstention_reason": null,
+      "expected_docs": [],
+      "selected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "cited_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Risposta breve: La mensa universitaria costa una quota che varia in base al reddito dello studente e alla sua condizione economica. Dettaglio: Secondo il bando di borsa di studio [F1], pag. 38, per gli studenti idonei e beneficiari di borsa di studio nelle graduatorie definitive, con status \"pendola"
+    },
+    {
+      "id": "q19",
+      "category": "out_of_domain",
+      "question": "Qual è la capitale della Francia?",
+      "expected_behavior": "abstain",
+      "predicted_behavior": "abstain",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": null,
+      "detected_topic": null,
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "fuori_dominio",
+      "detected_abstention_reason": "fuori_dominio",
+      "expected_docs": [],
+      "selected_docs": [
+        "guida-3.0-tesi-online-studenti.pdf",
+        "guida-studente-scienze-economiche-e-statistiche.pdf"
+      ],
+      "cited_docs": [
+        "guida-3.0-tesi-online-studenti.pdf",
+        "guida-studente-scienze-economiche-e-statistiche.pdf"
+      ],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Non lo so in base ai documenti disponibili. --- Documenti consultati (nessuno utilizzato per la risposta): - [F1] guida-studente-scienze-economiche-e-statistiche.pdf, pag. 65 - [F2] guida-3.0-tesi-online-studenti.pdf, pag. 17 - [F3] guida-studente-scienze-economiche-e-statistiche.pdf, pag. 35 _Asten"
+    },
+    {
+      "id": "q20",
+      "category": "synonym",
+      "question": "Quali sono i requisiti di accesso al corso di Scienze dell'amministrazione L-16?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "amministrazione",
+      "detected_course": "amministrazione",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "selected_docs": [
+        "rad-l16-r-scienze-dell-amministrazione-e-dell-organizzazione.pdf",
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: Il corso di Laurea in Scienze dell'Amministrazione e dell'Organizzazione (classe L - 16) richiede che gli studenti abbiano acquisito conoscenze fondamentali e problematiche del diritto pubblico, come indicato nell'Allegato 2 del Regolamento Didattico [F3]. Dettaglio: Il corso intende"
+    },
+    {
+      "id": "q21",
+      "category": "easy",
+      "question": "Quanti minuti al massimo dura la presentazione multimediale della prova finale di Informatica L-31?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "abstain",
+      "behavior_source": "trace",
+      "behavior_ok": false,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "tesi",
+      "detected_topic": "tesi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": "fuori_dominio",
+      "expected_docs": [
+        "Regolamento-della–prova–finale-informatica-l31.pdf"
+      ],
+      "selected_docs": [
+        "Regolamento-della–prova–finale-informatica-l31.pdf",
+        "guida-3.0-tesi-online-studenti.pdf"
+      ],
+      "cited_docs": [
+        "Regolamento-della–prova–finale-informatica-l31.pdf",
+        "guida-3.0-tesi-online-studenti.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Non lo so in base ai documenti disponibili. --- Documenti consultati (nessuno utilizzato per la risposta): - [F1] Regolamento-della–prova–finale-informatica-l31.pdf, pag. 1 - [F2] guida-3.0-tesi-online-studenti.pdf, pag. 22 - [F3] guida-3.0-tesi-online-studenti.pdf, pag. 25 _Astensione — Fuori domin"
+    },
+    {
+      "id": "q22",
+      "category": "easy",
+      "question": "Quanti CFU sono assegnati alla prova finale di Scienze dell'amministrazione L-16?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "amministrazione",
+      "detected_course": "amministrazione",
+      "course_ok": true,
+      "expected_topic": "tesi",
+      "detected_topic": "tesi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-prove-finali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "selected_docs": [
+        "guida-3.0-tesi-online-studenti.pdf",
+        "rad-l16-r-scienze-dell-amministrazione-e-dell-organizzazione.pdf",
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf",
+        "regolamento-prove-finali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf",
+        "regolamento-prove-finali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: 5 o 6 CFU, a seconda del documento consultato. Dettaglio: - Il regolamento \"regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf\" [F1] assegna 6 CFU alla prova finale. - Il regolamento \"regolamento-prove-finali-l16-scienze-dell'amministrazione-e-dell'organizzazione."
+    },
+    {
+      "id": "q23",
+      "category": "hard",
+      "question": "Quale carattere tipografico e quale corpo devo usare per il testo della tesi a Scienze dell'amministrazione L-16?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "amministrazione",
+      "detected_course": "amministrazione",
+      "course_ok": true,
+      "expected_topic": "tesi",
+      "detected_topic": "tesi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "Esame-Finale-Norme-redazionali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "selected_docs": [
+        "Esame-Finale-Norme-redazionali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf",
+        "regolamento-tesi-2023.pdf"
+      ],
+      "cited_docs": [
+        "Esame-Finale-Norme-redazionali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: Times New Roman, corpo 11. Dettaglio: secondo le norme redazionali per la tesi di laurea in Scienze dell'Amministrazione e dell'Organizzazione [F1], il carattere del testo deve essere Times New Roman. Inoltre, il corpo del carattere deve essere 11 [F2]. --- Fonti citate: - [F1] Esame"
+    },
+    {
+      "id": "q24",
+      "category": "easy",
+      "question": "Quali curricula sono previsti nel piano di studi di Scienze dell'Educazione L-19?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "scienze_educazione",
+      "detected_course": "scienze_educazione",
+      "course_ok": true,
+      "expected_topic": "piano_studi",
+      "detected_topic": "piano_studi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "piano-di-studi-l19-scienze-dell'educazione-2025-2026.pdf"
+      ],
+      "selected_docs": [
+        "piano-di-studi-l19-scienze-dell'educazione-2025-2026.pdf",
+        "regolamento-l19-scienze-dell'educazione.pdf"
+      ],
+      "cited_docs": [
+        "piano-di-studi-l19-scienze-dell'educazione-2025-2026.pdf",
+        "regolamento-l19-scienze-dell'educazione.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: Il curriculum \"Educatore Professionale Socio-Pedagogico\" è il solo curriculum previsto nel piano di studi di Scienze dell'Educazione L-19. --- Fonti utilizzate: - [F1] piano-di-studi-l19-scienze-dell'educazione-2025-2026.pdf, pag. 4 - [F2] regolamento-l19-scienze-dell'educazione.pdf,"
+    },
+    {
+      "id": "q25",
+      "category": "synonym",
+      "question": "In che modo si viene selezionati per immatricolarsi a Scienze dell'Educazione?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "scienze_educazione",
+      "detected_course": "scienze_educazione",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "selected_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "cited_docs": [
+        "immatricolazione scienze dell'educazione-l-19.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: La selezione per l'immatricolazione al corso di Scienze dell'educazione avviene attraverso una prova di ammissione. Dettaglio: La prova di ammissione consiste nella soluzione di 80 quesiti a risposta multipla, suddivisi in quattro argomenti: cultura generale, conoscenze di base di li"
+    },
+    {
+      "id": "q26",
+      "category": "synonym",
+      "question": "Con un Ris_Test di 18 al TOLC-I per Informatica posso iscrivermi senza obblighi formativi aggiuntivi?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": "accesso_informatica_tolc",
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "selected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: **Sì, puoi immatricolarti senza OFA.** Dettaglio: il punteggio TOLC-I/Ris\\_Test pari a **18** rientra nella fascia **>= 16**. La conseguenza indicata è: **immatricolazione senza OFA**. [F1] regolamento-di-accesso-informatical-31-.pdf, pag. 1 | Punteggio Ris\\_Test | Esito per l'immatr"
+    },
+    {
+      "id": "q27",
+      "category": "hard",
+      "question": "Quale titolo di studio è richiesto per l'ammissione a Scienze dell'amministrazione L-16?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "amministrazione",
+      "detected_course": "amministrazione",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "selected_docs": [
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf",
+        "regolamento-l16-scienze-dell-amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: È richiesto un diploma di scuola secondaria superiore o altro titolo di studio conseguito all'estero, riconosciuto idoneo ai sensi delle leggi vigenti. Dettaglio: Il regolamento del corso di laurea in Scienze dell'amministrazione e dell'organizzazione (L-16) specifica che per essere "
+    },
+    {
+      "id": "q28",
+      "category": "hard",
+      "question": "Quanti posti sono disponibili per l'ammissione a Economia Aziendale L-18?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "economia",
+      "detected_course": "economia",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "guida-studente-scienze-economiche-e-statistiche.pdf"
+      ],
+      "selected_docs": [
+        "guida-studente-scienze-economiche-e-statistiche.pdf"
+      ],
+      "cited_docs": [
+        "guida-studente-scienze-economiche-e-statistiche.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: 135 posti sono disponibili per l'ammissione al Corso di Laurea Magistrale in Economia (LM -56), ma non è specificato il numero di posti per l'ammissione a Economia Aziendale L-18. Dettaglio: La guida-studente-scienze-economiche-e-statistiche.pdf, pag. 19, indica che il Corso di Laure"
+    },
+    {
+      "id": "q29",
+      "category": "hard",
+      "question": "Qual è la durata massima complessiva della mobilità Erasmus per ciclo di studi?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "abstain",
+      "behavior_source": "trace",
+      "behavior_ok": false,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "erasmus",
+      "detected_topic": "erasmus",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": "fuori_dominio",
+      "expected_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "selected_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "cited_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Non lo so in base ai documenti disponibili. --- Documenti consultati (nessuno utilizzato per la risposta): - [F1] bando-erasmus25-26.pdf.pdf, pag. 11 - [F2] bando-erasmus25-26.pdf.pdf, pag. 7 - [F3] bando-erasmus25-26.pdf.pdf, pag. 1 _Astensione — Fuori dominio: La domanda sembra esulare dall'ambito"
+    },
+    {
+      "id": "q30",
+      "category": "easy",
+      "question": "Entro quale data va presentata la domanda per la borsa di studio 2025/2026?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "borsa",
+      "detected_topic": "borsa",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "selected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "cited_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: Non è specificato un termine preciso per la presentazione della domanda, ma si fa riferimento alla \"data di scadenza applicabile per il presente concorso\" [F2]. Dettaglio: Secondo il bando, i candidati sospesi in graduatoria fino al termine del semestre filtro e all'immatricolazione "
+    },
+    {
+      "id": "q31",
+      "category": "synonym",
+      "question": "Che differenza c'è tra graduatoria provvisoria e definitiva della borsa di studio?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "borsa",
+      "detected_topic": "borsa",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "media",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "selected_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "cited_docs": [
+        "Bando Borsa di studio 25-26.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: La graduatoria provvisoria è quella che viene stilata in base ai requisiti di merito dei candidati, mentre la graduatoria definitiva è quella finale, dopo aver verificato anche le condizioni economiche. Dettaglio: Secondo il bando Borsa di studio 25-26.pdf (pag. 12), i requisiti rela"
+    },
+    {
+      "id": "q32",
+      "category": "malformed",
+      "question": "prova finale l16 quanti cfu??",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "amministrazione",
+      "detected_course": "amministrazione",
+      "course_ok": true,
+      "expected_topic": "tesi",
+      "detected_topic": "tesi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "media",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-prove-finali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "selected_docs": [
+        "guida-3.0-tesi-online-studenti.pdf",
+        "regolamento-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf",
+        "regolamento-prove-finali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-prove-finali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "La prova finale del corso L-16 Scienze dell'Amministrazione e dell'Organizzazione assegna 5 CFU. [F2] --- Fonti citate: - [F2] regolamento-prove-finali-l16-scienze-dell'amministrazione-e-dell'organizzazione.pdf, pag. 1 > Nota: alcune affermazioni potrebbero non essere pienamente supportate dalle fon"
+    },
+    {
+      "id": "q33",
+      "category": "malformed",
+      "question": "erasmus durata massima mesi ciclo",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "erasmus",
+      "detected_topic": "erasmus",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "media",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "selected_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "cited_docs": [
+        "bando-erasmus25-26.pdf.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: La domanda non è specifica e richiede ulteriori informazioni. Tuttavia, in base al bando Erasmus+ Student mobility for studies [F1], pag. 11, si evince che l'attestato di permanenza (Allegato C) contiene le date di arrivo e partenza della mobilità. Per avere una risposta più precisa "
+    },
+    {
+      "id": "q34",
+      "category": "out_of_domain",
+      "question": "Quali sono i requisiti di accesso al corso di Ingegneria Civile?",
+      "expected_behavior": "unknown_course",
+      "predicted_behavior": "unknown_course",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "fuori_dominio_corso",
+      "detected_abstention_reason": "fuori_dominio_corso",
+      "expected_docs": [],
+      "selected_docs": [],
+      "cited_docs": [],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Non posso rispondere in modo affidabile su questo corso usando i documenti attualmente indicizzati. I corsi riconosciuti dal sistema sono: - Informatica L-31 - Scienze dell'educazione L-19 - Scienze dell'amministrazione L-16 Se hai aggiunto documenti relativi a questo corso nella cartella `documenti"
+    },
+    {
+      "id": "q35",
+      "category": "out_of_domain",
+      "question": "Chi ha scritto la Divina Commedia?",
+      "expected_behavior": "abstain",
+      "predicted_behavior": "abstain",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": null,
+      "detected_topic": null,
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "fuori_dominio",
+      "detected_abstention_reason": "fuori_dominio",
+      "expected_docs": [],
+      "selected_docs": [
+        "guida-studente-scienze-economiche-e-statistiche.pdf",
+        "immatricolazione scienze dell'educazione-l-19.pdf",
+        "regolamento-l19-scienze-dell'educazione.pdf"
+      ],
+      "cited_docs": [
+        "guida-studente-scienze-economiche-e-statistiche.pdf",
+        "immatricolazione scienze dell'educazione-l-19.pdf",
+        "regolamento-l19-scienze-dell'educazione.pdf"
+      ],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Non lo so in base ai documenti disponibili. --- Documenti consultati (nessuno utilizzato per la risposta): - [F1] regolamento-l19-scienze-dell'educazione.pdf, pag. 36 - [F2] guida-studente-scienze-economiche-e-statistiche.pdf, pag. 14 - [F3] immatricolazione scienze dell'educazione-l-19.pdf, pag. 8 "
+    },
+    {
+      "id": "q36",
+      "category": "out_of_domain",
+      "question": "Quanto dista Roma da Milano in treno?",
+      "expected_behavior": "abstain",
+      "predicted_behavior": "abstain",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": null,
+      "detected_topic": null,
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "fuori_dominio",
+      "detected_abstention_reason": "fuori_dominio",
+      "expected_docs": [],
+      "selected_docs": [
+        "bando-erasmus25-26.pdf.pdf",
+        "guida-studente-scienze-economiche-e-statistiche.pdf",
+        "piano-di-studi-l19-scienze-dell'educazione-2025-2026.pdf",
+        "regolamento-l19-scienze-dell'educazione.pdf"
+      ],
+      "cited_docs": [
+        "guida-studente-scienze-economiche-e-statistiche.pdf",
+        "piano-di-studi-l19-scienze-dell'educazione-2025-2026.pdf",
+        "regolamento-l19-scienze-dell'educazione.pdf"
+      ],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Non lo so in base ai documenti disponibili. --- Documenti consultati (nessuno utilizzato per la risposta): - [F1] piano-di-studi-l19-scienze-dell'educazione-2025-2026.pdf, pag. 5 - [F2] guida-studente-scienze-economiche-e-statistiche.pdf, pag. 99 - [F3] regolamento-l19-scienze-dell'educazione.pdf, p"
+    },
+    {
+      "id": "q37",
+      "category": "no_answer",
+      "question": "Quanti studenti sono iscritti al corso di Informatica L-31?",
+      "expected_behavior": "abstain",
+      "predicted_behavior": "abstain",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": null,
+      "detected_topic": null,
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "evidenza_insufficiente",
+      "detected_abstention_reason": "evidenza_insufficiente",
+      "expected_docs": [],
+      "selected_docs": [
+        "rad-l31-r-informatica.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "cited_docs": [
+        "rad-l31-r-informatica.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "Non lo so in base ai documenti disponibili. --- Documenti consultati (nessuno utilizzato per la risposta): - [F1] rad-l31-r-informatica.pdf, pag. 1 - [F2] regolamento-l31-informatica.pdf, pag. 1 - [F3] regolamento-l31-informatica.pdf, pag. 40 _Astensione — Fonte presente ma insufficiente: Sono stati"
+    },
+    {
+      "id": "q38",
+      "category": "ambiguous",
+      "question": "Quali sono le scadenze per consegnare la prova finale?",
+      "expected_behavior": "clarify",
+      "predicted_behavior": "clarify",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "tesi",
+      "detected_topic": "tesi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "ambigua",
+      "detected_abstention_reason": "ambigua",
+      "expected_docs": [],
+      "selected_docs": [],
+      "cited_docs": [],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "La domanda è ambigua: indica il corso di laurea a cui ti riferisci. Posso rispondere, ad esempio, per: - Informatica L-31 - Scienze dell'educazione L-19 - Scienze dell'amministrazione L-16"
+    },
+    {
+      "id": "q39",
+      "category": "ambiguous",
+      "question": "Come si compila il piano di studi?",
+      "expected_behavior": "clarify",
+      "predicted_behavior": "clarify",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": null,
+      "detected_course": null,
+      "course_ok": true,
+      "expected_topic": "piano_studi",
+      "detected_topic": "piano_studi",
+      "topic_ok": true,
+      "deterministic_rule": null,
+      "confidence": "bassa",
+      "expected_abstention_reason": "ambigua",
+      "detected_abstention_reason": "ambigua",
+      "expected_docs": [],
+      "selected_docs": [],
+      "cited_docs": [],
+      "retrieval_hit": false,
+      "citation_hit": false,
+      "answer_excerpt": "La domanda è ambigua: indica il corso di laurea a cui ti riferisci. Posso rispondere, ad esempio, per: - Informatica L-31 - Scienze dell'educazione L-19 - Scienze dell'amministrazione L-16"
+    },
+    {
+      "id": "q40",
+      "category": "hard",
+      "question": "Ho totalizzato 9 punti al TOLC-I di Informatica: cosa comporta per l'immatricolazione?",
+      "expected_behavior": "answer",
+      "predicted_behavior": "answer",
+      "behavior_source": "trace",
+      "behavior_ok": true,
+      "expected_course": "informatica",
+      "detected_course": "informatica",
+      "course_ok": true,
+      "expected_topic": "accesso",
+      "detected_topic": "accesso",
+      "topic_ok": true,
+      "deterministic_rule": "accesso_informatica_tolc",
+      "confidence": "alta",
+      "expected_abstention_reason": null,
+      "detected_abstention_reason": null,
+      "expected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "selected_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf",
+        "regolamento-l31-informatica.pdf"
+      ],
+      "cited_docs": [
+        "regolamento-di-accesso-informatical-31-.pdf"
+      ],
+      "retrieval_hit": true,
+      "citation_hit": true,
+      "answer_excerpt": "Risposta breve: **Sì, puoi immatricolarti, ma con OFA.** Dettaglio: il punteggio TOLC-I/Ris\\_Test pari a **9** rientra nella fascia **>= 9 e < 16**. La conseguenza indicata è: **immatricolazione con OFA**. [F1] regolamento-di-accesso-informatical-31-.pdf, pag. 1 | Punteggio Ris\\_Test | Esito per l'i"
+    }
+  ]
+}
