@@ -1,0 +1,635 @@
+{
+  "generated_at": "2026-06-20T13:12:29",
+  "model": "llama3.1:8b",
+  "repeat": 5,
+  "questions_per_run": 40,
+  "metric_variability": {
+    "behavior_accuracy": {
+      "n": 5,
+      "mean": 0.9,
+      "std": 0.0,
+      "min": 0.9,
+      "max": 0.9,
+      "values": [
+        0.9,
+        0.9,
+        0.9,
+        0.9,
+        0.9
+      ]
+    },
+    "course_accuracy": {
+      "n": 5,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "topic_accuracy": {
+      "n": 5,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "retrieval_hit_rate": {
+      "n": 5,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "citation_hit_rate": {
+      "n": 5,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0,
+      "values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "abstention_rate": {
+      "n": 5,
+      "mean": 0.923,
+      "std": 0.0,
+      "min": 0.923,
+      "max": 0.923,
+      "values": [
+        0.923,
+        0.923,
+        0.923,
+        0.923,
+        0.923
+      ]
+    },
+    "abstention_reason_accuracy": {
+      "n": 5,
+      "mean": 0.923,
+      "std": 0.0,
+      "min": 0.923,
+      "max": 0.923,
+      "values": [
+        0.923,
+        0.923,
+        0.923,
+        0.923,
+        0.923
+      ]
+    }
+  },
+  "per_question_stability": [
+    {
+      "id": "q01",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q02",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q03",
+      "category": "hard",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q04",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q05",
+      "category": "hard",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q06",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q07",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q08",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q09",
+      "category": "malformed",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q10",
+      "category": "out_of_domain",
+      "expected_behavior": "unknown_course",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "unknown_course"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q11",
+      "category": "out_of_domain",
+      "expected_behavior": "unknown_course",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "unknown_course"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q12",
+      "category": "ambiguous",
+      "expected_behavior": "clarify",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "clarify"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q13",
+      "category": "ambiguous",
+      "expected_behavior": "clarify",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "clarify"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q14",
+      "category": "hard",
+      "expected_behavior": "answer",
+      "ok_count": 0,
+      "runs": 5,
+      "distinct_verdicts": [
+        "abstain"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q15",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q16",
+      "category": "synonym",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q17",
+      "category": "no_answer",
+      "expected_behavior": "abstain",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "abstain"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q18",
+      "category": "no_answer",
+      "expected_behavior": "abstain",
+      "ok_count": 0,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q19",
+      "category": "out_of_domain",
+      "expected_behavior": "abstain",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "abstain"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q20",
+      "category": "synonym",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q21",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 0,
+      "runs": 5,
+      "distinct_verdicts": [
+        "abstain"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q22",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q23",
+      "category": "hard",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q24",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q25",
+      "category": "synonym",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q26",
+      "category": "synonym",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q27",
+      "category": "hard",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q28",
+      "category": "hard",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q29",
+      "category": "hard",
+      "expected_behavior": "answer",
+      "ok_count": 0,
+      "runs": 5,
+      "distinct_verdicts": [
+        "abstain"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q30",
+      "category": "easy",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q31",
+      "category": "synonym",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q32",
+      "category": "malformed",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q33",
+      "category": "malformed",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q34",
+      "category": "out_of_domain",
+      "expected_behavior": "unknown_course",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "unknown_course"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q35",
+      "category": "out_of_domain",
+      "expected_behavior": "abstain",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "abstain"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q36",
+      "category": "out_of_domain",
+      "expected_behavior": "abstain",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "abstain"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q37",
+      "category": "no_answer",
+      "expected_behavior": "abstain",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "abstain"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q38",
+      "category": "ambiguous",
+      "expected_behavior": "clarify",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "clarify"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q39",
+      "category": "ambiguous",
+      "expected_behavior": "clarify",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "clarify"
+      ],
+      "oscillates": false
+    },
+    {
+      "id": "q40",
+      "category": "hard",
+      "expected_behavior": "answer",
+      "ok_count": 5,
+      "runs": 5,
+      "distinct_verdicts": [
+        "answer"
+      ],
+      "oscillates": false
+    }
+  ],
+  "run_summaries": [
+    {
+      "total_questions": 40,
+      "behavior_accuracy": 0.9,
+      "course_accuracy": 1.0,
+      "topic_accuracy": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "citation_hit_rate": 1.0,
+      "abstention_rate": 0.923,
+      "abstention_reason_accuracy": 0.923,
+      "answerable_count": 27,
+      "answerable_with_docs_count": 27,
+      "negative_count": 13,
+      "reason_labelled_count": 13,
+      "llm_unavailable_count": 0,
+      "behavior_from_trace": 40,
+      "behavior_from_text": 0
+    },
+    {
+      "total_questions": 40,
+      "behavior_accuracy": 0.9,
+      "course_accuracy": 1.0,
+      "topic_accuracy": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "citation_hit_rate": 1.0,
+      "abstention_rate": 0.923,
+      "abstention_reason_accuracy": 0.923,
+      "answerable_count": 27,
+      "answerable_with_docs_count": 27,
+      "negative_count": 13,
+      "reason_labelled_count": 13,
+      "llm_unavailable_count": 0,
+      "behavior_from_trace": 40,
+      "behavior_from_text": 0
+    },
+    {
+      "total_questions": 40,
+      "behavior_accuracy": 0.9,
+      "course_accuracy": 1.0,
+      "topic_accuracy": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "citation_hit_rate": 1.0,
+      "abstention_rate": 0.923,
+      "abstention_reason_accuracy": 0.923,
+      "answerable_count": 27,
+      "answerable_with_docs_count": 27,
+      "negative_count": 13,
+      "reason_labelled_count": 13,
+      "llm_unavailable_count": 0,
+      "behavior_from_trace": 40,
+      "behavior_from_text": 0
+    },
+    {
+      "total_questions": 40,
+      "behavior_accuracy": 0.9,
+      "course_accuracy": 1.0,
+      "topic_accuracy": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "citation_hit_rate": 1.0,
+      "abstention_rate": 0.923,
+      "abstention_reason_accuracy": 0.923,
+      "answerable_count": 27,
+      "answerable_with_docs_count": 27,
+      "negative_count": 13,
+      "reason_labelled_count": 13,
+      "llm_unavailable_count": 0,
+      "behavior_from_trace": 40,
+      "behavior_from_text": 0
+    },
+    {
+      "total_questions": 40,
+      "behavior_accuracy": 0.9,
+      "course_accuracy": 1.0,
+      "topic_accuracy": 1.0,
+      "retrieval_hit_rate": 1.0,
+      "citation_hit_rate": 1.0,
+      "abstention_rate": 0.923,
+      "abstention_reason_accuracy": 0.923,
+      "answerable_count": 27,
+      "answerable_with_docs_count": 27,
+      "negative_count": 13,
+      "reason_labelled_count": 13,
+      "llm_unavailable_count": 0,
+      "behavior_from_trace": 40,
+      "behavior_from_text": 0
+    }
+  ]
+}
