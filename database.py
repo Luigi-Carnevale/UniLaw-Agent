@@ -213,6 +213,21 @@ def _delete_existing_index() -> None:
     if index_path.exists():
         shutil.rmtree(index_path)
 
+    # ChromaDB (>=0.4) tiene in cache, per tutta la durata del processo, un "System"
+    # (con la connessione SQLite) per ogni persist_directory. Dopo la rmtree qui sopra,
+    # un nuovo client riuserebbe quella connessione ormai orfana — il file è stato
+    # cancellato — e alla prima scrittura SQLite risponde "attempt to write a readonly
+    # database". Quando il rebuild parte dalla GUI il processo Streamlit è long-running,
+    # quindi la cache sopravvive: va svuotata perché il rebuild apra una connessione nuova
+    # sul file appena ricreato. In un processo appena avviato la cache è vuota e questo
+    # è un no-op.
+    try:
+        from chromadb.api.client import SharedSystemClient
+
+        SharedSystemClient.clear_system_cache()
+    except Exception as exc:  # difensivo: il percorso dell'API può variare tra versioni
+        logger.warning("Impossibile svuotare la cache di sistema ChromaDB: %s", exc)
+
 
 @st.cache_resource(show_spinner=False)
 def inizializza_conoscenza(

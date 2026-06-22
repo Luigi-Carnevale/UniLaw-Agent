@@ -1846,3 +1846,43 @@ l'hint spinge a rispondere quando il contesto riporta le condizioni di consultab
 con la regola «rispondi solo in base al contesto» (non introduce informazioni esterne).
 
 **Prossimo step.** Ciclo 2 — FASE 15 (copertina centrata in DOCX/PDF).
+
+---
+
+## 2026-06-22 — Fix operativo: rebuild della knowledge base da GUI («attempt to write a readonly database»)
+
+**Obiettivo.** Sbloccare il rebuild della knowledge base lanciato dall'interfaccia
+grafica, che falliva con `sqlite3.OperationalError: attempt to write a readonly
+database` lasciando poi l'app incapace di rispondere alle domande.
+
+**Sintomo.** Dopo l'analisi dei 22 PDF, `Chroma.from_documents` falliva sull'`upsert`
+con errore SQLite di database in sola lettura; da quel momento ogni domanda non
+funzionava. Non era un problema di permessi né di disco: un processo Python pulito
+scriveva sullo *stesso* file `chroma.sqlite3` senza errori, e `lsof` mostrava **due
+inode diversi sullo stesso path** (il vecchio indice da 12 MB ancora aperto + un file
+nuovo) — file cancellato e ricreato sotto un handle aperto.
+
+**Causa radice.** Il rebuild da GUI gira nel processo Streamlit long-running, che tiene
+la KB aperta (`@st.cache_resource`). `_delete_existing_index()` esegue `shutil.rmtree()`,
+ma ChromaDB 0.4 mantiene in cache, per tutta la durata del processo, un "System" (con la
+connessione SQLite) per ogni `persist_directory`: il nuovo client riusa quella connessione
+ormai orfana (file cancellato) → `readonly database`. Un processo appena avviato non ha
+quella cache (per questo il test isolato scriveva senza problemi).
+
+**File modificati.**
+- `database.py` — in `_delete_existing_index()`, dopo la `rmtree`, si svuota la cache di
+  sistema di ChromaDB (`from chromadb.api.client import SharedSystemClient;
+  SharedSystemClient.clear_system_cache()`), così il rebuild apre una connessione nuova sul
+  file ricreato. Chiamata avvolta in `try/except` (difensiva rispetto a cambi di API tra
+  versioni); no-op in un processo appena avviato.
+- `docs/problemi_noti.md` — **nuovo** documento dedicato di troubleshooting; questo caso è la
+  voce **P-01** (sintomo, diagnosi, causa radice, soluzione, recupero immediato, prevenzione).
+
+**Verifica.** `chromadb` 0.4.24; import e `SharedSystemClient.clear_system_cache()` OK;
+`database.py` supera il controllo di sintassi. Da ora il rebuild dalla GUI funziona senza
+dover riavviare l'app.
+
+**Rischi residui.** Nessuno noto: la modifica agisce solo sul percorso di rebuild. Resta la
+regola generale (cancellare i file di un DB SQLite aperto va sempre accompagnato dallo
+svuotamento della cache di sistema o dal riavvio del processo). Dettagli completi in
+[P-01](problemi_noti.md).
