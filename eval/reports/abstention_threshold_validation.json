@@ -1,0 +1,165 @@
+{
+  "generated_at": "2026-06-22T11:29:27",
+  "model": "llama3.1:8b",
+  "note": "retrieval deterministico; nessun LLM coinvolto nella misura della strength",
+  "summary": {
+    "config_threshold": 0.37,
+    "calibrated_threshold": 0.3667,
+    "calibration_ids": [
+      "q17",
+      "q18",
+      "q19"
+    ],
+    "heldout_ids": [
+      "q35",
+      "q36",
+      "q37"
+    ],
+    "calibration_accuracy": 1.0,
+    "heldout_accuracy_config_threshold": 1.0,
+    "heldout_accuracy_calibrated_threshold": 1.0,
+    "semantic_config_threshold": 0.53,
+    "semantic_calibrated_threshold": 0.5286,
+    "semantic_calibration_accuracy": 1.0,
+    "semantic_heldout_accuracy_config_threshold": 1.0,
+    "semantic_heldout_accuracy_calibrated_threshold": 1.0
+  },
+  "calibration": [
+    {
+      "id": "q17",
+      "strength": 0.4,
+      "expected": "evidenza_insufficiente",
+      "predicted": "evidenza_insufficiente",
+      "ok": true
+    },
+    {
+      "id": "q18",
+      "strength": 0.6667,
+      "expected": "evidenza_insufficiente",
+      "predicted": "evidenza_insufficiente",
+      "ok": true
+    },
+    {
+      "id": "q19",
+      "strength": 0.3333,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    }
+  ],
+  "heldout_config_threshold": [
+    {
+      "id": "q35",
+      "strength": 0.3333,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    },
+    {
+      "id": "q36",
+      "strength": 0.25,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    },
+    {
+      "id": "q37",
+      "strength": 0.5,
+      "expected": "evidenza_insufficiente",
+      "predicted": "evidenza_insufficiente",
+      "ok": true
+    }
+  ],
+  "heldout_calibrated_threshold": [
+    {
+      "id": "q35",
+      "strength": 0.3333,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    },
+    {
+      "id": "q36",
+      "strength": 0.25,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    },
+    {
+      "id": "q37",
+      "strength": 0.5,
+      "expected": "evidenza_insufficiente",
+      "predicted": "evidenza_insufficiente",
+      "ok": true
+    }
+  ],
+  "semantic_calibration": [
+    {
+      "id": "q17",
+      "strength": 0.597,
+      "expected": "evidenza_insufficiente",
+      "predicted": "evidenza_insufficiente",
+      "ok": true
+    },
+    {
+      "id": "q18",
+      "strength": 0.6741,
+      "expected": "evidenza_insufficiente",
+      "predicted": "evidenza_insufficiente",
+      "ok": true
+    },
+    {
+      "id": "q19",
+      "strength": 0.4601,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    }
+  ],
+  "semantic_heldout_config_threshold": [
+    {
+      "id": "q35",
+      "strength": 0.3242,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    },
+    {
+      "id": "q36",
+      "strength": 0.4036,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    },
+    {
+      "id": "q37",
+      "strength": 0.6634,
+      "expected": "evidenza_insufficiente",
+      "predicted": "evidenza_insufficiente",
+      "ok": true
+    }
+  ],
+  "semantic_heldout_calibrated_threshold": [
+    {
+      "id": "q35",
+      "strength": 0.3242,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    },
+    {
+      "id": "q36",
+      "strength": 0.4036,
+      "expected": "fuori_dominio",
+      "predicted": "fuori_dominio",
+      "ok": true
+    },
+    {
+      "id": "q37",
+      "strength": 0.6634,
+      "expected": "evidenza_insufficiente",
+      "predicted": "evidenza_insufficiente",
+      "ok": true
+    }
+  ]
+}
