@@ -97,11 +97,14 @@ exports/
 
 # ======================
 # Deliverable generati (export di docs/*.md): si versionano solo i sorgenti .md
-# I PDF del corpus in documenti/ NON sono toccati (regola ancorata alla root con /).
+# I PDF del corpus in documenti/ NON sono toccati (root con /; docs/ esplicito).
 # ======================
 /*.docx
 /*.pptx
 /*.pdf
+docs/*.docx
+docs/*.pptx
+docs/*.pdf
 
 # LibreOffice/OpenOffice lock files
 .~lock.*#
