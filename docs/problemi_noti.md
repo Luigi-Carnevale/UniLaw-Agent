@@ -136,7 +136,7 @@ conviene ripulirlo:
 ```bash
 kill <PID_streamlit>          # oppure Ctrl-C nel terminale dell'app
 rm -rf "$HOME/Library/Application Support/UniLawAgent/chroma_db"
-cd "/Users/luigicarnevale/Desktop/UniLaw-Agent-main"
+cd /percorso/di/UniLaw-Agent      # la cartella del progetto
 .venv/bin/streamlit run app_agent.py
 ```
 

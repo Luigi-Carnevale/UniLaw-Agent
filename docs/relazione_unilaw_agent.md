@@ -25,8 +25,6 @@
 
 **Autore:** Luigi Carnevale
 
-**Matricola:** 0512119029
-
 **Anno accademico:** 2025/2026
 
 **Docente:** Fabio Palomba
